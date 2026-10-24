@@ -1,0 +1,7 @@
+trace_id,scenario,processing_duration_ms,http_timeout_ms,client_observation,backend_observation
+T01,fast_success,420,2000,HTTP 200 received,Document processing completed
+T02,slow_success,3400,2000,HTTP timeout,Processing completed after client timeout
+T03,slow_failure,5100,2000,HTTP timeout,Processing failed after timeout
+T04,duplicate_retry,3600,2000,Client retries after timeout,Original request may still be processing
+T05,worker_crash,1800,2000,Request accepted,Worker crashes before recording completion
+T06,temporary_worker_failure,2400,2000,Request accepted,Temporary error occurs during processing
